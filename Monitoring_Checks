@@ -1,0 +1,31 @@
+import datetime, os, fnmatch
+#datetime to convert UNIX to realtime
+#os to access listdir - listing all files in certain directory
+#fnmatch to match filename characteristics
+    
+
+def find_file(node,date):
+    filelist = []
+    for file in os.listdir("C:\Users\Matt\Documents\Echologics\EchoShoreMonitoring"):
+        if fnmatch.fnmatch(file, '*.cor.raw'):
+            print(file)
+            filelist.append(file)
+
+      
+    return filelist
+   
+
+def main():
+
+    node_dat=21
+    date_dat=14
+    find_file(node_dat,date_dat)
+            
+            
+    #print(datetime.datetime.fromtimestamp(int(sunrise)).strftime('%Y-%m-%d %H:%M:%S'))
+          
+
+     
+if __name__ == '__main__':
+    main()
+    
